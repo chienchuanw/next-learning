@@ -6,7 +6,18 @@ interface User {
 }
 
 const UsersPage = async () => {
+  // This will save result in built-in cache
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
+
+  // This will disable cache
+  // const res = await fetch('https://jsonplaceholder.typicode.com/users', { cache: 'no-store' });
+
+  // This will get fresh data from backend for every 10s
+  // const res = await fetch('https://jsonplaceholder.typicode.com/users', { next: { revalidate: 10 } });
+
+
+
+
   const users: User[] = await res.json();
 
   return (
