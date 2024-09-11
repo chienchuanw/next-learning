@@ -7,10 +7,10 @@ interface User {
 
 const UsersPage = async () => {
   // This will save result in built-in cache
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  // const res = await fetch('https://jsonplaceholder.typicode.com/users');
 
   // This will disable cache
-  // const res = await fetch('https://jsonplaceholder.typicode.com/users', { cache: 'no-store' });
+  const res = await fetch('https://jsonplaceholder.typicode.com/users', { cache: 'no-store' });
 
   // This will get fresh data from backend for every 10s
   // const res = await fetch('https://jsonplaceholder.typicode.com/users', { next: { revalidate: 10 } });
@@ -20,7 +20,8 @@ const UsersPage = async () => {
 
   return (
     <>
-      <h1>UsersPage</h1>
+      <h1>Users</h1>
+      <p>{new Date().toLocaleTimeString()}</p>
       <ul>
         {users.map(user => <li key={user.id}>{user.name}</li>)}
       </ul>
