@@ -1,5 +1,8 @@
+'use client';
+
 import Image from 'next/image'
 import Link from "next/link"
+import ProductCard from './components/ProductCard'
 
 export default function Home() {
   return (
@@ -12,6 +15,8 @@ export default function Home() {
       {/* Using Link tag instead for optimizing the loading */}
       {/* Remember to import Link first before using the Link tag */}
       <Link href="/users">Users</Link>
+      <ProductCard></ProductCard>
     </main>
   )
 }
+
